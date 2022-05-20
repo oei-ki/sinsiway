@@ -1,0 +1,159 @@
+.sub-page {
+  #header {
+    width: 100%;
+    position: relative;
+    height: $haederHeight;
+    z-index: 50;
+    background: white;
+    // 로고 영역
+    #top-logo {
+      float: left;
+      a {
+        height: $haederHeight;
+        line-height: $haederHeight;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    // 메인메뉴
+    #top-nav {
+      position: relative;
+      height: $haederHeight; /*고정형*/
+      float: right;
+      text-transform: uppercase;
+      ul { // #top-nav ul 표기와 동일
+        float: left;
+        li {
+          font-size: $fontSizeNormal;
+          font-weight: 800;
+          position: relative; /*블록을 만듬?*/
+          float: left;
+          margin-left: 50px;
+          /*li의 첫번째 요소의 margin-left 0으로*/
+          &:first-child { /*& = this*/
+            margin-left: 0;
+          }
+          a {
+            display: inline-block; /*버튼영역을 넓게 하기 위해*/
+            width: 100%;
+            height: 100%;
+            line-height: $haederHeight;
+          }
+          &:hover {
+            .sub-menu {
+              visibility: visible;
+              top: 100%;
+              opacity: 1;
+            }
+          }
+          //submenu 구현
+          .sub-menu {
+            position: absolute;
+            border: 4px solid transparent;
+            border-radius: 10%;
+            background-image: linear-gradient(#fff, #fff),linear-gradient(to right,#026bfa,  rgba(24,207,192,1) 100%);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            visibility: hidden; /*hidden시 사라지고 visible시 보임*/
+            top: calc(100% - 3px);
+            opacity: 0;
+            transition: .3s;
+            z-index: 300;
+            li {
+              width: 100%; /*부모요소의(li)  float를 초기화시킴*/
+              margin: 0; /*부모요소의(li)   margin-left: 30px를 초기화시킴*/
+              box-sizing: border-box;
+              padding: 10px 10px;
+              min-width: 150px;
+              transition: .3s;
+              &:hover {
+                a {
+                  color: $fontColorPrimary;
+                  font-weight:bold;
+                  border-bottom: 1px solid $borderColorPrimary;
+                }
+              }
+              a {
+                line-height: $submenuHeight;
+                height: $submenuHeight;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .sub-main {
+    position: relative;
+    display: flex;
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+  #lnb {
+    width: 100%;
+    flex: 230px;
+    flex-shrink: 0;
+    flex-grow: 0; /*늘어나지 않게 막음*/
+    padding-right: 50px;
+    margin: 0;
+    padding: 0;
+    div {
+      box-sizing: border-box;
+      position: relative;
+      &:hover {
+        .sub-side{
+            visibility: visible;
+            opacity: 1;
+        }
+      }
+      span{
+        border-bottom: 1px solid $borderColorPrimary;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        line-height: 50px;
+        font-size: $fontSizeMid;
+        background: $gbtnColor;
+        box-sizing: border-box;
+      }
+      ul {
+        visibility: hidden;
+        position: absolute;
+        width: 150PX;
+        z-index: 2;
+        border: 1px solid #cfcfcf;
+        border-radius: 0 0 20px 20PX ;
+        transition: .3s;
+        opacity: 0;
+        background: #f0f0f0;
+
+        box-sizing: border-box;
+        li {
+          a {
+            border-bottom: 1px solid #d9dcde;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            line-height: 60px;
+            font-size: $titleFontSizeNormal;
+            box-sizing: border-box;
+            transition: .5s;
+            &:last-child{
+              border-bottom: none;
+            }
+            &:hover {
+              padding-left: 20px;
+            }
+            &.on {
+              color: $fontColorHover;
+              padding-left: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

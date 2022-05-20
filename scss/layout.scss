@@ -1,93 +1,100 @@
 // layout 공통
-$haederHeight: 60px;
+$haederHeight: 80px;
 $submenuHeight: 40px;
 $footerHeight: 80px;
 $mainMinHeight: calc(100vh - (#{$haederHeight} + #{$footerHeight} + 51px));/*51 = footer margin*/
 #wrap {
-  width: 1320px;
+  width: 1400px;
   margin: 0 auto;
-  #header {
-    position: relative;
-    height: $haederHeight;
-    // 로고 영역
-    #top-logo {
-      float: left;
-      a {
-        height: $haederHeight;
-        line-height: $haederHeight;
-        img {
-          width: 100%;
+  // .fix-header {
+  //   position: fixed;
+  //   z-index: 10;
+    #header {
+      width: 100%;
+      position: relative;
+      height: $haederHeight;
+      z-index: 50;
+      background: white;
+      // 로고 영역
+      #top-logo {
+        float: left;
+        a {
+          height: $haederHeight;
+          line-height: $haederHeight;
+          img {
+            width: 100%;
+          }
         }
       }
-    }
-    // 메인메뉴
-    #top-nav {
-      position: relative;
-      height: $haederHeight; /*고정형*/
-      float: right;
-      text-transform: uppercase;
-      ul { // #top-nav ul 표기와 동일
-        float: left;
-        li {
-          font-size: $fontSizeNormal;
-          font-weight: 800;
-          position: relative; /*블록을 만듬?*/
+      // 메인메뉴
+      #top-nav {
+        position: relative;
+        height: $haederHeight; /*고정형*/
+        float: right;
+        text-transform: uppercase;
+        ul { // #top-nav ul 표기와 동일
           float: left;
-          margin-left: 50px;
-          /*li의 첫번째 요소의 margin-left 0으로*/
-          &:first-child { /*& = this*/
-            margin-left: 0;
-          }
-          a {
-            display: inline-block; /*버튼영역을 넓게 하기 위해*/
-            width: 100%;
-            height: 100%;
-            line-height: $haederHeight;
-          }
-          &:hover {
-            .sub-menu {
-              visibility: visible;
-              top: 100%;
-              opacity: 1;
+          li {
+            font-size: $fontSizeNormal;
+            font-weight: 800;
+            position: relative; /*블록을 만듬?*/
+            float: left;
+            margin-left: 50px;
+            /*li의 첫번째 요소의 margin-left 0으로*/
+            &:first-child { /*& = this*/
+              margin-left: 0;
             }
-          }
-          //submenu 구현
-          .sub-menu {
-            position: absolute;
-            border: 4px solid transparent;
-            border-radius: 10%;
-            background-image: linear-gradient(#fff, #fff),linear-gradient(to right,#026bfa,  rgba(24,207,192,1) 100%);
-            background-origin: border-box;
-            background-clip: content-box, border-box;
-            visibility: hidden; /*hidden시 사라지고 visible시 보임*/
-            top: calc(100% - 3px);
-            opacity: 0;
-            transition: .3s;
-            z-index: 300;
-            li {
-              width: 100%; /*부모요소의(li)  float를 초기화시킴*/
-              margin: 0; /*부모요소의(li)   margin-left: 30px를 초기화시킴*/
-              box-sizing: border-box;
-              padding: 10px 10px;
-              min-width: 150px;
+            a {
+              display: inline-block; /*버튼영역을 넓게 하기 위해*/
+              width: 100%;
+              height: 100%;
+              line-height: $haederHeight;
+            }
+            &:hover {
+              .sub-menu {
+                visibility: visible;
+                top: 100%;
+                opacity: 1;
+              }
+            }
+            //submenu 구현
+            .sub-menu {
+              position: absolute;
+              border: 4px solid transparent;
+              border-radius: 10%;
+              background-image: linear-gradient(#fff, #fff),linear-gradient(to right,#026bfa,  rgba(24,207,192,1) 100%);
+              background-origin: border-box;
+              background-clip: content-box, border-box;
+              visibility: hidden; /*hidden시 사라지고 visible시 보임*/
+              top: calc(100% - 3px);
+              opacity: 0;
               transition: .3s;
-              &:hover {
+              z-index: 300;
+              li {
+                width: 100%; /*부모요소의(li)  float를 초기화시킴*/
+                margin: 0; /*부모요소의(li)   margin-left: 30px를 초기화시킴*/
+                box-sizing: border-box;
+                padding: 10px 10px;
+                min-width: 150px;
+                transition: .3s;
+                &:hover {
+                  a {
+                    color: $fontColorPrimary;
+                    font-weight:bold;
+                    border-bottom: 1px solid $borderColorPrimary;
+                  }
+                }
                 a {
-                  color: $fontColorPrimary;
-                  font-weight:bold;
-                  border-bottom: 1px solid $borderColorPrimary;
+                  line-height: $submenuHeight;
+                  height: $submenuHeight;
                 }
               }
-              a {
-                line-height: $submenuHeight;
-                height: $submenuHeight;
-              }
             }
           }
         }
       }
     }
-  }
+  // }
   section {
     background-image: url("../img/panstar/Introduce.png");
   }

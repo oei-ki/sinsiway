@@ -9,9 +9,9 @@
     font-size: $fontSizeMid;
     .main-title {
       font-size: $titleFontSizeBig;
-      // text-align: center;
-
+      padding-bottom: 20px;
     }
+
     .tit {
       width: 100%;
       margin-top: 80px;
@@ -162,5 +162,43 @@ section {
   padding: 6px 8px 5px;
   font-size: $fontSizeTiny;
   font-weight: bold;
+}
 
+.map-con {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  li {
+    float: left;
+    margin-left: 20px;
+    &:first-child {
+      margin-left: 0;
+    }
+    dl {
+      dt {
+        background: skyblue;
+      }
+      dd {
+        strong {
+          height: 80px;
+          line-height: 80px;
+        }
+        p {
+          position: relative;
+          height: 80px;
+          line-height: 80px;
+          font-size: $fontSizeSmall;
+          color: $fontColorsmall;
+          &:before {
+            content: '';
+            height: 2px;
+            width: 100%;
+            position: relative;
+            background: $borderColor;
+            display: block;
+          }
+        }
+      }
+    }
+  }
 }
