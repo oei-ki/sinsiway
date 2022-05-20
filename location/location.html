@@ -56,7 +56,7 @@
                     <li>
                       <dl>
                         <dt>
-                          <div id="map" style="width: 800px;height: 350px;margin: 50px auto 0;"></div>
+                          <div id="map" style="height: 350px;margin: 50px auto 0;"></div>
                         </dt>
                         <dd>
                           <strong>본사</strong>
@@ -67,7 +67,7 @@
                     <li>
                       <dl>
                         <dt>
-                          <div id="map1" style="width: 800px;height: 350px;margin: 50px auto 0;"></div>
+                          <div id="map1" style="height: 350px;margin: 50px auto 0;"></div>
                         </dt>
                         <dd>
                           <strong>제주R&D센터</strong>
@@ -78,7 +78,7 @@
                     <li>
                       <dl>
                         <dt>
-                          <div id="map2" style="width: 800px;height: 350px;margin: 50px auto 0;"></div>
+                          <div id="map2" style="height: 350px;margin: 50px auto 0;"></div>
                         </dt>
                         <dd>
                           <strong>대전기술지원센터</strong>
@@ -178,9 +178,11 @@
 
               // 인포윈도우로 장소에 대한 설명을 표시합니다
               var infowindow = new kakao.maps.InfoWindow({
-                  content: '<div class="map-inpo-window"><a href="https://map.kakao.com/?urlX=525787.0&urlY=1106884.0&name=%EC%84%9C%EC%9A%B8%20%EC%86%A1%ED%8C%8C%EA%B5%AC%20%EB%B2%95%EC%9B%90%EB%A1%9C9%EA%B8%B8%2026&map_type=TYPE_MAP&from=roughmap">서울특별시 송파구 법원로 9길 26</a></div>'
+                  content: '<div class="map-inpo-window"><a href="https://map.kakao.com/?from=roughmap&amp;eName=%EC%84%9C%EC%9A%B8%20%EC%86%A1%ED%8C%8C%EA%B5%AC%20%EB%B2%95%EC%9B%90%EB%A1%9C9%EA%B8%B8%2026&amp;eX=525787.0&amp;eY=1106884.0" target="_blank">서울특별시 송파구 법원로 9길 26</a></div>'
               });
               infowindow.open(map, marker);
+
+
 
               // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
               map.setCenter(coords);
