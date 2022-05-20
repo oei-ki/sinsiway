@@ -1,0 +1,164 @@
+//component
+.box {
+  display: flex;
+  .items {
+    box-sizing: border-box;
+    padding: 50px;
+    flex: 100%;
+    flex-shrink: 0; /*사이즈 줄어들지 않게 함*/
+    font-size: $fontSizeMid;
+    .main-title {
+      font-size: $titleFontSizeBig;
+      // text-align: center;
+
+    }
+    .tit {
+      width: 100%;
+      margin-top: 80px;
+      display: inline-block;
+      font-weight: 900;
+      background: $fontColorPrimary;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      strong {
+        margin-bottom: 20px;
+        display: flex;
+        flex-flow:nowrap;
+        justify-content: center;
+        span {
+          margin-right: 40px;
+          &.first-child {
+            margin-right: 0;
+          }
+        }
+      }
+      }
+    .title {
+      font-size: $titleFontSizeMid;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  &.items_2 {
+    .items {
+      flex: 50%;
+    }
+  }
+}
+//community table
+section {
+  margin: 50px;
+  h1 {
+    font-size: 30px;
+    color: #fff;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  table {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse; /*셀끼리 간격 붙임*/
+      border: 0;
+      & + .gbtn {
+        margin-top: 20px;
+        &.right {
+          float: right;
+        }
+      }
+      th {
+        padding: 20px 15px;
+        text-align: left;
+        font-weight: 500;
+        font-size: $fontSizeNormal;
+        color: white;
+        text-transform: uppercase;
+      }
+      tr{
+        td {
+          padding: 15px;
+          text-align: left;
+          vertical-align: middle;  /*테이블 내에서 상하 정렬(칸/셀 정렬), default : top*/
+          font-weight: 300;
+          font-size: 12px;
+          border-bottom: 1px solid $borderColorPrimary;
+        }
+      }
+    }
+    .tbl-header {
+      background-color: $borderColorPrimary;
+    }
+    .tbl-content {
+      margin-top: 0;
+    }
+  }
+
+  // .tbl-header {
+  //   background-color: $borderColorPrimary;
+  //   table {
+  //     width: 100%;
+  //     table-layout: fixed;
+  //     th {
+  //       padding: 20px 15px;
+  //       text-align: left;
+  //       font-weight: 500;
+  //       font-size: 12px;
+  //       text-transform: uppercase;
+  //       color: white;
+  //     }
+  //   }
+  // }
+
+  // .tbl-content {
+  //   margin-top: 0;
+  //   table {
+  //     width: 100%;
+  //     table-layout: fixed;
+  //     border-collapse: collapse;
+  //     tr{
+  //       border-bottom: 1px solid $borderColorPrimary;
+  //       td {
+  //         padding: 15px;
+  //         text-align: left;
+  //         vertical-align: middle;  /*테이블 내에서 상하 정렬(칸/셀 정렬), default : top*/
+  //         font-weight: 300;
+  //         font-size: 12px;
+  //       }
+  //     }
+  //   }
+  // }
+
+
+//accordion
+.accordion {
+  dl {
+    width: 800px;
+    margin: 50px auto;
+    dt {
+      font-size: 18px;
+      text-indent: 3em;
+      color: white;
+      line-height: 35px;
+      height: 35px;
+      background: $tableBg;
+    }
+    dd{
+      height: 300px;
+      background: #d4d0c8;
+      p {
+        text-indent: 1em;
+        padding: 20px;
+      }
+    }
+  }
+}
+
+//kakao map
+.map-inpo-window {
+  width: 150px;
+  text-align: center;
+  padding: 6px 0;
+
+}

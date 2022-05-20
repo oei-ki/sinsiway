@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>xwood</title>
+    <link rel="stylesheet" href="../css/style.min.css">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+  </head>
+  <body class="subpage">
+    <div id="wrap">
+      <header id="header">
+        <h1 id="top-logo">
+          <a href="../index.html">XWOOD</a>
+        </h1>
+        <!--메인메뉴-->
+        <nav id="top-nav">
+          <ul>
+            <li><a href="../company/introduce.html">Company</a>
+              <ul class="sub-menu">
+                <li><a href="../company/introduce.html">Introduce</a></li>
+                <li><a href="../company/history.html">History</a></li>
+              </ul>
+            </li>
+            <li><a href="../product/product.html">Product</a></li>
+            <li><a href="../community/notice.html">Community</a>
+              <ul class="sub-menu">
+                <li><a href="../community/notice.html">Notice</a></li>
+                <li><a href="../community/faq.html">FAQ</a></li>
+              </ul>
+            </li>
+            <li><a href="../location/location.html">Location</a></li>
+          </ul>
+        </nav>
+        <section class="sub-visual sub-visual-customer subpage-notice">
+      </header>
+      <main>
+        <!-- 메인배너 -->
+        <!-- 컨텐츠 영역 -->
+        <div class="container">
+          <!-- 왼쪽메뉴 -->
+          <aside id="lnb">
+            <ul>
+              <li><a href="../location/location.html">Location</a></li>
+            </ul>
+          </aside>
+          <div class="content">
+            <h2 class="sub-title"><span>Location</span></h2>
+            <div class="inner">
+              <div class="box">
+                <div class="items">
+                  <h3 class="main-title">신시웨이 오시는 길</h3>
+                </div>
+                <div class="items">
+                  <ul>
+                    <li>
+                      <dl>
+                        <dt>
+                          <div id="map" style="width: 800px;height: 350px;margin: 50px auto 0;"></div>
+                        </dt>
+                        <dd>
+                          <strong>본사</strong>
+                          <p>서울특별시 송파구 법원로 9길 26(문정동) 에이치비지니스파크 D동 4층</p>
+                        </dd>
+                      </dl>
+                    </li>
+                    <li>
+                      <dl>
+                        <dt>
+                          <div id="map" style="width: 800px;height: 350px;margin: 50px auto 0;"></div>
+                        </dt>
+                        <dd>
+                          <strong>제주R&D센터</strong>
+                          <p>제주특별자치도 제주시 첨단로 213-3 319호(스마트빌딩)</p>
+                        </dd>
+                      </dl>
+                    </li>
+                    <li>
+                      <dl>
+                        <dt>
+                          <div id="map" style="width: 800px;height: 350px;margin: 50px auto 0;"></div>
+                        </dt>
+                        <dd>
+                          <strong>대전기술지원센터</strong>
+                          <p>대전광역시 유성구 테크노9로 35 대전테크노파크 IT 전용벤처타운 304호</p>
+                        </dd>
+                      </dl>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer id="footer">
+        <div class="footer-top">
+          <div class="container">
+            <div class="row">
+              <div class="column footer-logo">
+                <!-- footer logo -->
+                <h3>Logo</h3>
+              </div>
+              <div class="column">
+                <!-- site map -->
+                <h4>site map</h4>
+                <ul>
+                  <li><a href="#intro">Home</a></li>
+                  <li><a href="#myprofile">My Profile</a></li>
+                  <li><a href="#portfolio">Portfolio</a></li>
+                  <li><a href="#myskill">My Skill</a></li>
+                  <li><a href="#ourclients">Our Clients</a></li>
+                  <li><a href="#mytools">My Tool</a></li>
+                  <li><a href="#project">Project</a></li>
+                </ul>
+              </div>
+              <div class="column">
+                <!-- contact us -->
+                <h4>contact us</h4>
+                <p>
+                  A108 Adam street <br>
+                  New York, NY 535022<br>
+                  United states<br>
+                  <strong>Phone :</strong><a href="tel:+82-10-0000-0000">+82-010-0000-0000</a><br>
+                  <strong>Email :</strong><a href="mailto:mymail@naver.com">mymail@naver.com</a>
+                </p>
+              </div>
+              <div class="column news">
+                <!-- news -->
+                <h4>news</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <form>
+                  <input type="text" name="search"><input type="submit" value="search">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- footer 하단영역 -->
+        <div class="container">
+          <div class="copyright">
+            &copy;copyright <strong>MyPage</strong> .All Rights Reserved
+          </div>
+          <div class="credits">
+            Designed By <a href="mailto:mymail@naver.com">MySelf</a>
+          </div>
+        </div>
+        <!-- &copy;copyright all rights reserved. -->
+      </footer>
+    </div>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7bced741b66d7231537bb9e0f1bb3413"></script>
+    <script>
+      var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+          mapOption = {
+              center: new kakao.maps.LatLng(35.8704181, 128.642759), // 지도의 중심좌표
+              level: 3 // 지도의 확대 레벨
+          };
+
+      var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+      // 마커가 표시될 위치입니다
+      var markerPosition  = new kakao.maps.LatLng(35.8704181, 128.642759);
+
+      // 마커를 생성합니다
+      var marker = new kakao.maps.Marker({
+          position: markerPosition
+      });
+
+    // 인포윈도우로 장소에 대한 설명을 표시합니다
+      var infowindow = new kakao.maps.InfoWindow({
+      content: '<div class="map-inpo-window">Home</div>'
+      });
+      infowindow.open(map, marker);
+
+      // 마커가 지도 위에 표시되도록 설정합니다
+      marker.setMap(map);
+
+      // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+      // marker.setMap(null);
+    </script>
+  </body>
+</html>
