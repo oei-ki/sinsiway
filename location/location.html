@@ -155,7 +155,16 @@
             center: new kakao.maps.LatLng(37.4842345, 127.1168248), // 지도의 중심좌표
             level: 3 // 지도의 확대 레벨
         };
-
+    var mapContainer = document.getElementById('map1'), // 지도를 표시할 div
+        mapOption = {
+            center: new kakao.maps.LatLng(33.4537553, 126.5726665), // 지도의 중심좌표
+            level: 3 // 지도의 확대 레벨
+        };
+    var mapContainer = document.getElementById('map2'), // 지도를 표시할 div
+        mapOption = {
+            center: new kakao.maps.LatLng(36.4204181, 127.4059299), // 지도의 중심좌표
+            level: 3 // 지도의 확대 레벨
+        };
     // 지도를 생성합니다
     var map = new kakao.maps.Map(mapContainer, mapOption);
 
