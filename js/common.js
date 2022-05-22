@@ -31,5 +31,57 @@ $(function(){
 }
 });
 
+  const widthNum = 345; //slide li 개별 너비, ul.column의 너비를 계산할 수 있다
+  const caInner = $("#carousel-inner");
+  let liLeng = $("#carousel-inner ul.column li").length;
+
+
+  $("#carousel-inner ul.column").css("width", widthNum*liLeng);
+
+  $("#carousel-inner ul.column li:last").prependTo("#carousel-inner ul.column")
+  caInner.css("margin-left", -widthNum)
+
+  function initialFunc(init){
+    caInner.css("margin-left", -widthNum)
+    if(init == "prev"){
+      $("#carousel-inner ul.column li:last").prependTo("#carousel-inner ul.column")
+    }else{
+      $("#carousel-inner ul.column li:first").appendTo("#carousel-inner ul.column")
+    }
+  }
+
+  initialFunc("prev");
+
+  function actionBtn(el){
+    el.click(function(){
+      let caInMarginLeft = parseInt(caInner.css("margin-left"));
+      let isAni = caInner.is(":animated");
+      if(!isAni){
+        if(el.attr("id") === "carousel-prev"){
+          caInner.animate({marginLeft: caInMarginLeft + widthNum },"slow","swing",function(){
+            initialFunc("prev")
+          });
+        }else if(el.attr("id") === "carousel-next"){
+          caInner.animate({marginLeft: caInMarginLeft - widthNum },"slow","swing",function(){
+            initialFunc("next")
+          });
+        }
+      }
+    })
+  }
+
+$(".btn").each(function(){
+  actionBtn($(this))
+})
+
+//auto slide  setInterval
+let timerId = null;
+let auto = function(){  //auto라는 함수생성
+  timerId = setInterval(function(){
+    $("#carousel-next").trigger("click");
+  },3000)
+}
+
+auto();
 
 });
