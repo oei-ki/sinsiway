@@ -261,9 +261,37 @@ section {
     text-align: center;
     li {
       position: relative;
-      float:left;
+      display: inline-block;
       margin: 20px;
       width: 30%;
+      &:nth-child(1):before {
+        content: '01';
+      }
+      &:nth-child(2):before {
+        content: '02';
+      }
+      &:nth-child(3):before {
+        content: '03';
+      }
+      &:nth-child(4):before {
+        content: '04';
+      }
+      &:nth-child(5):before {
+        content: '05';
+      }
+      &:before {
+        position: absolute;
+        top: -25px;
+        left: calc(50% - 25px);
+        width: 50px;
+        height: 50px;
+        color: white;
+        line-height: 50px;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 50%;
+        background: #4a4a4a;
+      }
       dl {
         display: flex;
         flex-direction: column;
