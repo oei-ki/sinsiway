@@ -68,22 +68,20 @@ section {
           float: right;
         }
       }
-      th {
-        padding: 20px 15px;
-        text-align: left;
-        font-weight: 500;
-        font-size: $fontSizeNormal;
-        color: white;
-        text-transform: uppercase;
-      }
       tr{
         td {
+          &:first-child {
+            width: 7%;
+          }
+          &:last-child {
+            width: 10%;
+          }
           padding: 15px;
           text-align: left;
-          vertical-align: middle;  /*테이블 내에서 상하 정렬(칸/셀 정렬), default : top*/
+          vertical-align: middle;;  /*테이블 내에서 상하 정렬(칸/셀 정렬), default : top*/
           font-weight: 300;
-          font-size: 12px;
-          border-bottom: 1px solid $borderColorPrimary;
+          font-size: $fontSizeNormal;
+          border-bottom: 1px solid $borderColor;
         }
       }
     }
@@ -110,7 +108,7 @@ section {
     }
     dd{
       height: 300px;
-      background: #d4d0c8;
+      background: white;
       p {
         text-indent: 1em;
         padding: 20px;
@@ -333,14 +331,25 @@ section {
   }
 }
 //faq 영역
-.faq-box {
+.faq-con {
   dl{
     position: relative;
     width: 100%;
     display: block;
-    border: 1px solid $fontColorHover;
+    border: 1px solid #f2f2f2;
     border-radius: 10px;
     overflow: hidden;
+    margin-bottom: 10px;
+    &.open{
+        border: 1px solid $fontColorHover;
+        border-radius: 10px;
+        dt {
+          background: $fontColorHover;
+        }
+        dd {
+          display: block;
+        }
+    }
     .question {
       font-weight: bold;
       position: absolute;
@@ -350,7 +359,7 @@ section {
     dt{
       display: block;
       position: relative;
-      background: $fontColorHover;
+      background: white;
       border-radius: 10px 10px 0 0;
       padding: 20px 60px;
       .category {
@@ -376,9 +385,6 @@ section {
       color: $fontColorsmall;
       p {
         margin: 0 auto;
-      }
-      &.on {
-        display: none;
       }
     }
   }

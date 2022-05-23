@@ -64,6 +64,19 @@ body.subpage {
       }
       //page content 영역
       .inner {
+        .back-color {
+          position: relative;
+          background-color: #f6f6f6;
+          padding-bottom: 100px;
+          &:before {
+            content: 'ORGANIZATION';
+            position: absolute;
+            color: white;
+            font-size: 150px;
+            font-weight: 900;
+            bottom: -35px;
+          }
+        }
         .box {
           flex-wrap: wrap; /*그림 밑으로 내려옴*/
         }
@@ -102,7 +115,12 @@ body.subpage {
           }
         }
       }
-
+      .sub-main {
+        position: relative;
+        img {
+          width: 100%;
+        }
+      }
     }
   }
 }

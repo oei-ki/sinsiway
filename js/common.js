@@ -84,4 +84,13 @@ let auto = function(){  //auto라는 함수생성
 
 auto();
 
+
+$("dl.faq-item").click(function(){
+  $(this).toggleClass('open')
+});
+
+
+
+
+
 });
